@@ -15,6 +15,84 @@
 				"custom_model_data": 3000016
 			},
 			"model": "item/elitecreatures/skeletons2/skeletonecaxe"
+		},
+		{
+			"predicate": {
+				"custom_model_data": 10000
+			},
+			"model": "lunar_studios:item/rayhm/demon_slayer_v1/base_katana"
+		},
+		{
+			"predicate": {
+				"custom_model_data": 10001
+			},
+			"model": "lunar_studios:item/rayhm/demon_slayer_v1/hashira_giyu_katana"
+		},
+		{
+			"predicate": {
+				"custom_model_data": 10002
+			},
+			"model": "lunar_studios:item/rayhm/demon_slayer_v1/hashira_gyomei_weapon"
+		},
+		{
+			"predicate": {
+				"custom_model_data": 10003
+			},
+			"model": "lunar_studios:item/rayhm/demon_slayer_v1/hashira_mitsuri_katana"
+		},
+		{
+			"predicate": {
+				"custom_model_data": 10004
+			},
+			"model": "lunar_studios:item/rayhm/demon_slayer_v1/hashira_muichiro_katana"
+		},
+		{
+			"predicate": {
+				"custom_model_data": 10005
+			},
+			"model": "lunar_studios:item/rayhm/demon_slayer_v1/hashira_obanai_katana"
+		},
+		{
+			"predicate": {
+				"custom_model_data": 10006
+			},
+			"model": "lunar_studios:item/rayhm/demon_slayer_v1/hashira_rengoku_katana"
+		},
+		{
+			"predicate": {
+				"custom_model_data": 10007
+			},
+			"model": "lunar_studios:item/rayhm/demon_slayer_v1/hashira_sanemi_katana"
+		},
+		{
+			"predicate": {
+				"custom_model_data": 10008
+			},
+			"model": "lunar_studios:item/rayhm/demon_slayer_v1/hashira_shinobu_katana"
+		},
+		{
+			"predicate": {
+				"custom_model_data": 10009
+			},
+			"model": "lunar_studios:item/rayhm/demon_slayer_v1/hashira_uzui_sword"
+		},
+		{
+			"predicate": {
+				"custom_model_data": 10010
+			},
+			"model": "lunar_studios:item/rayhm/demon_slayer_v1/inosuke_katana"
+		},
+		{
+			"predicate": {
+				"custom_model_data": 10011
+			},
+			"model": "lunar_studios:item/rayhm/demon_slayer_v1/tanjiro_katana"
+		},
+		{
+			"predicate": {
+				"custom_model_data": 10012
+			},
+			"model": "lunar_studios:item/rayhm/demon_slayer_v1/zenitsu_katana"
 		}
 	]
 }
