@@ -1,0 +1,20 @@
+{
+	"parent": "item/handheld",
+	"textures": {
+		"layer0": "item/netherite_sword"
+	},
+	"overrides": [
+		{
+			"predicate": {
+				"custom_model_data": 3000015
+			},
+			"model": "item/elitecreatures/skeletons2/skeletonecmace"
+		},
+		{
+			"predicate": {
+				"custom_model_data": 3000016
+			},
+			"model": "item/elitecreatures/skeletons2/skeletonecaxe"
+		}
+	]
+}
