@@ -1,0 +1,50 @@
+{
+	"parent": "item/generated",
+	"textures": {
+		"layer0": "item/lapis_lazuli"
+	},
+	"overrides": [
+		{
+			"predicate": {
+				"custom_model_data": 3000010
+			},
+			"model": "item/elitecreatures/skeletons2/flamingskullef"
+		},
+		{
+			"predicate": {
+				"custom_model_data": 3000011
+			},
+			"model": "item/elitecreatures/skeletons2/slashvert"
+		},
+		{
+			"predicate": {
+				"custom_model_data": 3000012
+			},
+			"model": "item/elitecreatures/skeletons2/bigslashrev"
+		},
+		{
+			"predicate": {
+				"custom_model_data": 3000013
+			},
+			"model": "item/elitecreatures/skeletons2/spinslash"
+		},
+		{
+			"predicate": {
+				"custom_model_data": 3000014
+			},
+			"model": "item/elitecreatures/skeletons2/bigslash"
+		},
+		{
+			"predicate": {
+				"custom_model_data": 3000015
+			},
+			"model": "item/elitecreatures/skeletons2/normalslash"
+		},
+		{
+			"predicate": {
+				"custom_model_data": 3000016
+			},
+			"model": "item/elitecreatures/skeletons2/skeleton2key"
+		}
+	]
+}
