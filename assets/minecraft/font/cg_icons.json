@@ -1,0 +1,22 @@
+{
+    "providers": [
+        {
+            "chars": [
+                "\ue001"
+            ],
+            "file": "cg:item/icons/staff_bp.png",
+            "ascent": 7,
+            "height": 7,
+            "type": "bitmap"
+        },
+        {
+            "chars": [
+                "\ue002"
+            ],
+            "file": "cg:item/icons/staff_mo.png",
+            "ascent": 7,
+            "height": 7,
+            "type": "bitmap"
+        }
+    ]
+}
