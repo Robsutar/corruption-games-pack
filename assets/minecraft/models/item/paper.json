@@ -9,6 +9,12 @@
 				"custom_model_data": 10000
 			},
 			"model": "lunar_studios:item/rayhm/demon_slayer_v1/nichirin_ore"
+		},
+		{
+			"predicate": {
+				"custom_model_data": 5001
+			},
+			"model": "cg:item/dropped_player_heart"
 		}
 	]
 }
