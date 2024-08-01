@@ -1,0 +1,58 @@
+{
+    "providers": [
+        {
+            "chars": [
+                "\ue001"
+            ],
+            "file": "cg:item/corrupted_zone/points0.png",
+            "ascent": 16,
+            "height": 32,
+            "type": "bitmap"
+        },
+        {
+            "chars": [
+                "\ue002"
+            ],
+            "file": "cg:item/corrupted_zone/points20.png",
+            "ascent": 16,
+            "height": 32,
+            "type": "bitmap"
+        },
+        {
+            "chars": [
+                "\ue003"
+            ],
+            "file": "cg:item/corrupted_zone/points40.png",
+            "ascent": 16,
+            "height": 32,
+            "type": "bitmap"
+        },
+        {
+            "chars": [
+                "\ue004"
+            ],
+            "file": "cg:item/corrupted_zone/points60.png",
+            "ascent": 16,
+            "height": 32,
+            "type": "bitmap"
+        },
+        {
+            "chars": [
+                "\ue005"
+            ],
+            "file": "cg:item/corrupted_zone/points80.png",
+            "ascent": 16,
+            "height": 32,
+            "type": "bitmap"
+        },
+        {
+            "chars": [
+                "\ue006"
+            ],
+            "file": "cg:item/corrupted_zone/points100.png",
+            "ascent": 16,
+            "height": 32,
+            "type": "bitmap"
+        }
+    ]
+}
