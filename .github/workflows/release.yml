@@ -34,7 +34,8 @@ jobs:
 
       - name: Calculate SHA-1 of ZIP file
         id: sha1
-        run: sha1sum resourcepack.zip | awk '{ print $1 }'
+        run: |
+          echo "::set-output name=sha1::$(sha1sum resourcepack.zip | awk '{ print $1 }')"
 
       - name: Create GitHub Release
         id: create_release
@@ -59,3 +60,4 @@ jobs:
           asset_path: resourcepack.zip
           asset_name: resourcepack.zip
           asset_content_type: application/zip
+          sha1: ${{ steps.sha1.outputs.sha1 }}
