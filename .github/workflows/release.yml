@@ -30,11 +30,11 @@ jobs:
           rm -rf .git .github
 
       - name: Create ZIP file
-        run: zip -r repository.zip .
+        run: zip -r resourcepack.zip .
 
       - name: Calculate SHA-1 of ZIP file
         id: sha1
-        run: sha1sum repository.zip | awk '{ print $1 }'
+        run: sha1sum resourcepack.zip | awk '{ print $1 }'
 
       - name: Create GitHub Release
         id: create_release
@@ -46,7 +46,7 @@ jobs:
           release_name: Release ${{ github.ref }}
           body: |
             ## Changes
-            - List of changes goes here
+            - resourcepack.zip SHA-1: ${{ steps.sha1.outputs.sha1 }}
           draft: false
           prerelease: false
 
@@ -56,6 +56,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: repository.zip
-          asset_name: ${{ steps.sha1.outputs.sha1 }}.zip
+          asset_path: resourcepack.zip
+          asset_name: resourcepack.zip
           asset_content_type: application/zip
