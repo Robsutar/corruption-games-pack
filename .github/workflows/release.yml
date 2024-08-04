@@ -74,5 +74,5 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: resourcepack.zip
-          asset_name: ${{ steps.sha1.outputs.sha1 }}.zip
+          asset_name: resourcepack.zip
           asset_content_type: application/zip
