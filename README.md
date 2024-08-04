@@ -1,2 +1,2 @@
 # corruption-games-pack
-Resourcepack for corruption-games plugin
+Resource pack for corruption-games plugin
