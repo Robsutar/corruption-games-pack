@@ -1,0 +1,59 @@
+name: Create Release
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          lfs: true
+
+      - name: Set up Python environment
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install zip and sha1sum tools
+        run: sudo apt-get install -y zip
+
+      - name: Remove unwanted files
+        run: |
+          rm -f .gitignore .gitattributes
+
+      - name: Create ZIP file
+        run: zip -r repository.zip .
+
+      - name: Calculate SHA-1 of ZIP file
+        id: sha1
+        run: sha1sum repository.zip | awk '{ print $1 }'
+
+      - name: Create GitHub Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          body: |
+            ## Changes
+            - List of changes goes here
+          draft: false
+          prerelease: false
+
+      - name: Upload Release Asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: repository.zip
+          asset_name: ${{ steps.sha1.outputs.sha1 }}.zip
+          asset_content_type: application/zip
