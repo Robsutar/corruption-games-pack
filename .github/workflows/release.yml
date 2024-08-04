@@ -25,7 +25,9 @@ jobs:
 
       - name: Remove unwanted files
         run: |
+          rm -f README.md
           rm -f .gitignore .gitattributes
+          rm -rf .git .github
 
       - name: Create ZIP file
         run: zip -r repository.zip .
