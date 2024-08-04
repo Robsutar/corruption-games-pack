@@ -60,4 +60,3 @@ jobs:
           asset_path: resourcepack.zip
           asset_name: resourcepack.zip
           asset_content_type: application/zip
-          sha1: ${{ steps.sha1.outputs.sha1 }}
