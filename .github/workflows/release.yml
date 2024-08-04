@@ -23,20 +23,6 @@ jobs:
       - name: Install zip and sha1sum tools
         run: sudo apt-get install -y zip
 
-      - name: Remove unwanted files
-        run: |
-          rm -f README.md
-          rm -f .gitignore .gitattributes
-          rm -rf .git .github
-
-      - name: Create ZIP file
-        run: zip -r resourcepack.zip .
-
-      - name: Calculate SHA-1 of ZIP file
-        id: sha1
-        run: |
-          echo "::set-output name=sha1::$(sha1sum resourcepack.zip | awk '{ print $1 }')"
-
       - name: Set up Git
         run: |
           git fetch --tags
@@ -50,6 +36,20 @@ jobs:
         run: |
           commits=$(git log ${{ steps.get_prev_tag.outputs.prev_tag }}..${{ github.ref }} --pretty=format:"%h %s")
           echo "::set-output name=commits::${commits}"
+
+      - name: Remove unwanted files
+        run: |
+          rm -f README.md
+          rm -f .gitignore .gitattributes
+          rm -rf .git .github
+
+      - name: Create ZIP file
+        run: zip -r resourcepack.zip .
+
+      - name: Calculate SHA-1 of ZIP file
+        id: sha1
+        run: |
+          echo "::set-output name=sha1::$(sha1sum resourcepack.zip | awk '{ print $1 }')"
 
       - name: Create GitHub Release
         id: create_release
