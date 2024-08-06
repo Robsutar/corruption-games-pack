@@ -34,8 +34,12 @@ jobs:
       - name: Get commit messages
         id: get_commit_messages
         run: |
-          commits=$(git log --no-merges --pretty=format:"%h %s" ${{ steps.get_prev_tag.outputs.prev_tag }}..${{ github.ref }})
-          echo "::set-output name=commits::${commits}"
+          prev_tag=${{ steps.get_prev_tag.outputs.prev_tag }}
+          current_ref=${{ github.ref }}
+          commits=$(git log --no-merges --pretty=format:"%h %s" $prev_tag..$current_ref)
+          echo "::set-output name=commits::$commits"
+          echo "Previous Tag: $prev_tag"
+          echo "Current Ref: $current_ref"
 
       - name: Remove unwanted files
         run: |
