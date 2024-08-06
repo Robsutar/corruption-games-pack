@@ -1,0 +1,1 @@
+{"textures":{"0":"modelengine:entity/kokushibo"},"elements":[{"from":[-5.05,22.5,7.9],"to":[-3.5500002,23.0,7.9],"faces":{"south":{"uv":[12.5,5.8333335,13.0,6.0],"tintindex":0,"rotation":0,"texture":"#0"},"north":{"uv":[12.0,5.8333335,12.5,6.0],"tintindex":0,"rotation":0,"texture":"#0"}}}],"display":{"gui":{"rotation":[30,225,0]}}}
