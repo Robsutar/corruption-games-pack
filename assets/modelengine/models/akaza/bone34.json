@@ -1,0 +1,1 @@
+{"textures":{"0":"modelengine:entity/akaza"},"elements":[{"from":[7.1,9.0,12.7],"to":[11.1,11.0,12.7],"faces":{"south":{"uv":[4.8,14.400001,4.0,14.8],"tintindex":0,"rotation":0,"texture":"#0"},"north":{"uv":[4.0,14.400001,3.2,14.8],"tintindex":0,"rotation":0,"texture":"#0"}}}],"display":{"gui":{"rotation":[30,225,0]}}}
