@@ -13,7 +13,32 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
         with:
+          fetch-depth: 0
           lfs: true
+
+      - name: Fetch all branches
+        run: git fetch --all
+
+      - name: Switch to main branch
+        run: git checkout main
+
+      - name: Fetch tags
+        run: git fetch --tags
+
+      - name: Get previous tag
+        id: prev_tag
+        run: |
+          PREV_TAG=$(git tag --sort=-v:refname | sed -n '2p')
+          echo "PREV_TAG=$PREV_TAG" >> $GITHUB_OUTPUT
+          echo "Previous tag: $PREV_TAG"
+
+      - name: Get commit messages
+        id: get_commits
+        run: |
+          COMMITS=$(git log --no-merges --pretty=format:'- %h %s' ${{ steps.prev_tag.outputs.PREV_TAG }}..)
+          echo "COMMITS<<EOF" >> $GITHUB_OUTPUT
+          echo "$COMMITS" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
 
       - name: Set up Python environment
         uses: actions/setup-python@v2
@@ -22,25 +47,6 @@ jobs:
 
       - name: Install zip and sha1sum tools
         run: sudo apt-get install -y zip
-
-      - name: Set up Git
-        run: |
-          git fetch --tags
-
-      - name: Get previous tag
-        id: get_prev_tag
-        run: echo ::set-output name=prev_tag::$(git describe --tags --abbrev=0 $(git rev-list --tags --skip=1 --max-count=1))
-
-      - name: Get commit messages
-        id: get_commit_messages
-        run: |
-          prev_tag=${{ steps.get_prev_tag.outputs.prev_tag }}
-          echo "::set-output name=commits::${commits}"
-          current_ref=${{ github.ref }}
-          commits=$(git log --no-merges --pretty=format:"%h %s" $prev_tag..$current_ref)
-          echo "::set-output name=commits::$commits"
-          echo "Previous Tag: $prev_tag"
-          echo "Current Ref: $current_ref"
 
       - name: Remove unwanted files
         run: |
@@ -65,10 +71,9 @@ jobs:
           tag_name: ${{ github.ref }}
           release_name: Release ${{ github.ref }}
           body: |
-            ## Changes
-            - resourcepack.zip SHA-1: ${{ steps.sha1.outputs.sha1 }}
-            - Commits:
-              ${{ steps.get_commit_messages.outputs.commits }}
+            resourcepack.zip SHA-1: ${{ steps.sha1.outputs.sha1 }}
+            Commits:
+              ${{ steps.get_commits.outputs.COMMITS }}
           draft: false
           prerelease: false
 
