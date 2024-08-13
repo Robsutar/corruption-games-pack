@@ -1,0 +1,1 @@
+{"textures":{"0":"modelengine:entity/gyutaro"},"elements":[{"from":[8.0,12.414222,1.8701363],"to":[8.0,25.414223,18.870136],"faces":{"east":{"uv":[16.0,7.3333335,13.166667,9.5],"tintindex":0,"rotation":0,"texture":"#0"},"west":{"uv":[13.166667,7.3333335,10.333334,9.5],"tintindex":0,"rotation":0,"texture":"#0"}}}],"display":{"gui":{"rotation":[30,225,0]}}}
